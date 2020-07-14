@@ -66,7 +66,22 @@ $fila = mysqli_fetch_array($resultado);
         <div class="row">
         <div class="col-sm-12">
             <form action="comprar_prod.php" method="POST">
-                <div class="form-group">
+            <div class="container">
+  <div class="card-deck">
+    <div class="col-lg-6 col-md-2 col-sm-4 mb-3">
+          <img class='card-img-top rounded' src="<?php echo $fila['img_prod']?>">
+        </div>
+            <div class='card-body'>
+          <h4 class='card-title'><a href='$path'><?php echo $fila['nombre_prod']?></a></h4>
+            <ul class='list-unstyled'>
+              <li>
+                <span class='badge badge-primary'>64GB</span>
+                <span class='badge badge-success'>Touch</span>
+                <span class='badge badge-danger'>5G</span>
+                <span class='badge badge-warning'>Liberado</span>
+              </li>
+            </ul>
+            <div class="form-group">
                     <label for="nombre_prod">Prodcuto</label>
                     <input type="text" id="inputDisabledEx2" class="form-control" placeholder="<?php echo $fila['nombre_prod']?>" disabled>
                 </div>
@@ -104,12 +119,13 @@ $fila = mysqli_fetch_array($resultado);
                         ?>
                     </select>                
                 </div>
-                
-                <div class="form-group">
-                    <input type="submit" value="Actualizar" class="btn btn-success">
-                </div>
-
-                
+        </div>
+        
+        <div class='card-footer text-center bg-primary card-footer text-center bg-primary col-lg-12 col-md-2 col-sm-4 mb-3'>
+          <a href='#' class='btn btn-primary stretched-link'>Comprar</a>
+        </div>
+      </div>
+    </div>
             </form>
         </div>
         </div>

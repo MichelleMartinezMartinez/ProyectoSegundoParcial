@@ -74,7 +74,6 @@ if($varsesion == null || $varsesion = ''){
         <th>Producto</th>
         <th>Precio</th>
         <th>En stock</th>
-        <th>Colores</th>
         <th></th>
       </tr>
     </thead>
@@ -88,7 +87,6 @@ if($varsesion == null || $varsesion = ''){
         <td><?php echo $fila["nombre_prod"]; ?></td>
         <td>$<?php echo $fila["precio_prod"]; ?></td>
         <td><?php echo $fila["stock_prod"]; ?></td>
-        <td><?php echo $fila["color"]; ?></td>
         <td><a href="comprar.php?id=<?php echo $fila['id_prod']; ?>" class="btn btn-success my-2 my-sm-0" type="submit">Comprar</a></td>
         <td>
         </td>
