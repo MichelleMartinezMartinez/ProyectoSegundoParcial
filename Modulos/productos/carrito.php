@@ -20,13 +20,6 @@ if($varsesion == null || $varsesion = ''){
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <style>
-    .btn-primary1{
-    background-color:#D22929;
-    color:white;
-    }
-    </style>  
-
 </head>
 <body>
 <?php require_once 'conexion.php'; ?>
@@ -42,7 +35,7 @@ if($varsesion == null || $varsesion = ''){
         <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="carrito.php">Carrito</a>
+        <a class="nav-link" href="#">Carrito</a>
       </li>
         </div>
     </ul>
@@ -54,47 +47,24 @@ if($varsesion == null || $varsesion = ''){
     </form>
   </div>
 </nav>
-    <br/>
-    <br/>
-    <
+
+<br>
 <div class="container mt-5">
-    <div class="row">
-    <div class="col-sm-12">
-    </div>
-    <div class="col-sm-12">
-  <div class="table-reponsive">
-    <table class="table table-stripped">
-    <thead>
-      <tr>
-        <th>Producto</th>
-        <th>Precio</th>
-        <th>En stock</th>
-        <th></th>
-      </tr>
-    </thead>
+<h3>Carrito de compras!</h3>
+<table class="table">
     <tbody>
-      <?php 
-      $consulta = "SELECT * FROM productos";
-      $resultado = mysqli_query($mysqli, $consulta);
-      while($fila = mysqli_fetch_array($resultado)){
-      ?>
-      <tr>
-        <td><?php echo $fila["nombre_prod"]; ?></td>
-        <td>$<?php echo $fila["precio_prod"]; ?></td>
-        <td><?php echo $fila["stock_prod"]; ?></td>
-        <td><a href="comprar.php?id=<?php echo $fila['id_prod']; ?>" class="btn btn-success my-2 my-sm-0" type="submit">Comprar</a></td>
-        <td>
-        </td>
-      </tr>
-      <?php }  ?>
+        <tr>
+            <td>Carrito de compras texto de prueba</td>
+        </tr>
     </tbody>
-    </table>
-  </div>
-  </div>
-  </div>
-  </div>
+</table>
 </div>
-              
-    </div>
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>    
 </body>
 </html>

@@ -11,13 +11,15 @@ if($varsesion == null || $varsesion = ''){
 <?php
     require_once 'conexion.php';
     $id = $_POST['id'];
-    $nombre = $_POST['nombre_prod'];
-    $des = $_POST['des_prod'];
-    $precio = $_POST['precio_prod'];
-    $stock = $_POST['stock_prod'];
-    $colores = $_POST['color'];
+    $nombre = $_POST['nombre1'];
+    $des = $_POST['des'];
+    $precio = $_POST['precio'];
+    $stock = $_POST['stock'];
+    $compra = $_POST['venta'];
     
-    $consulta = "UPDATE productos set nombre_prod = '$nombre', des_prod = '$des', precio_prod = '$precio', color = '$color', stock_prod = '$stock' WHERE id_prod = $id ";
+    $consulta = "UPDATE productos set venta_prod = '$compra' WHERE id_prod = '$id'";
     mysqli_query($mysqli, $consulta);
+    $consulta2 = "INSERT INTO compras (usr_compra,prod_compra,cant_compra) VALUES ('El usuario ".$_SESSION['nombre'].",Ha realizado una compra','$nombre','$compra')";
+    mysqli_query($mysqli, $consulta2);
     header("Location: index.php");
 ?>
