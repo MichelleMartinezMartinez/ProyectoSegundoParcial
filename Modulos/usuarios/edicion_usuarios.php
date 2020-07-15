@@ -1,3 +1,14 @@
+<?php 
+session_start();
+error_reporting(0);
+$varsesion = $_SESSION['nombre'];
+
+if($varsesion == null || $varsesion = ''){
+  header("Location:///Localhost/ProyectoBD/Modulos/index.php"); 
+  die();
+}
+print_r($_SESSION);
+?>
 <?php
     require_once 'conexion.php';
     $id = $_POST['id'];

@@ -19,7 +19,12 @@ if($varsesion == null || $varsesion = ''){
     
     $consulta = "UPDATE productos set venta_prod = '$compra' WHERE id_prod = '$id'";
     mysqli_query($mysqli, $consulta);
+    
     $consulta2 = "INSERT INTO compras (usr_compra,prod_compra,cant_compra) VALUES ('El usuario ".$_SESSION['nombre'].",Ha realizado una compra','$nombre','$compra')";
     mysqli_query($mysqli, $consulta2);
+
+    $consulta3 = "UPDATE productos set stock_prod = stock_prod - '$compra', venta_prod = '$compra' WHERE id_prod = '$id'";
+    mysqli_query($mysqli, $consulta3);
+    
     header("Location: index.php");
 ?>
